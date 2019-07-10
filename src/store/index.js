@@ -1,0 +1,34 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
+import jsonp from 'jsonp'
+
+Vue.use(Vuex)
+
+// 定义baseURL（两个备用接口）
+// const baseURL = 'http://api.douban.com/'
+const baseURL = 'https://douban.uieee.com/'
+
+const store = new Vuex.Store({
+  state: {
+    // 标题
+    title: null,
+    movieList: null
+  },
+  mutations: {
+    setData (state, payload) {
+      state.title = payload.title
+      state.movieList = payload.subjects
+    }
+  },
+  actions: {
+    getHot (context) {
+      // 使用jsonp请求数据
+      jsonp(baseURL + 'v2/movie/in_theaters', (err, res) => {
+        if (err) return alert('获取数据失败')
+        // 不能直接修改state中的数据，要先commit给mutations
+        context.commit('setData', res)
+      })
+    }
+  }
+})
+export default store

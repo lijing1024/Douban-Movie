@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* 头部 */
+.header {
+  height: 50px;
+  line-height: 50px;
+  background-color: #069;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+/* 尾部 */
+.footer {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  background: #069;
+}
+.footer .item {
+  display: block;
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+.footer .item.active {
+  color: orangered;
+}
+/* body区域 */
+.center {
+  flex: 1;
+  overflow: auto;
+}
+.list {
+  list-style: none;
+  height: 100%;
+  padding: 0 10px;
+}
+.list li {
+  overflow: hidden;
+}
+.list img {
+  float: left;
+  width: 70px;
+  height: 90px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+.tag {
+  background: green;
+  font-size: 12px;
+  color:#fff;
+  padding: 2px 3px;
+  margin: 5px;
+}
