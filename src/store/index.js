@@ -28,6 +28,13 @@ const store = new Vuex.Store({
         // 不能直接修改state中的数据，要先commit给mutations
         context.commit('setData', res)
       })
+    },
+    getMovie (context) {
+      jsonp(baseURL + 'v2/movie/coming_soon', (err, res) => {
+        if(err) return alert('获取数据失败')
+        console.log(11111)
+        context.commit('setData', res)
+      })
     }
   }
 })

@@ -1,9 +1,13 @@
 <template>
-  <div>头部</div>
+  <div>{{title}}</div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
-  name: 'my-header'
+  name: 'my-header',
+  computed: {
+    ...mapState(['title'])
+  }
 }
 </script>
 <style scoped>

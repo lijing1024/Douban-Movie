@@ -35,7 +35,7 @@
   text-decoration: none;
   color: #fff;
 }
-.footer .item.active {
+.footer .item.router-link-exact-active {
   color: orangered;
 }
 /* body区域 */

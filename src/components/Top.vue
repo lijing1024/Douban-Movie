@@ -1,5 +1,5 @@
 <template>
-  <div>top</div>
+  <div>top250</div>
 </template>
 <script>
 export default {

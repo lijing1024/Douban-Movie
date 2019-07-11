@@ -1,5 +1,5 @@
 <template>
-  <ul class="list">
+  <ul v-if="movieList" class="list">
     <li v-for="item in movieList" :key=item.id>
       <img :src="'https://images.weserv.nl?url='+ item.images.small" alt="">
       <div class="info">
@@ -11,6 +11,7 @@
       </div>
     </li>
   </ul>
+  <div v-else style="margin:20px">努力加载中...</div>
 </template>
 <script>
 import {mapState,mapActions} from 'vuex'
