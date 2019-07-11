@@ -8,7 +8,7 @@
       <i class="iconfont icon-dianying"></i>
       <p>即将上映</p>
     </router-link>
-    <router-link to="/top250" class="item">
+    <router-link to="/top" class="item">
       <i class="iconfont icon-top"></i>
       <p>top250</p>
     </router-link>

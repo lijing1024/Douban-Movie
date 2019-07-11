@@ -14,18 +14,14 @@
   <div v-else style="margin:20px">努力加载中...</div>
 </template>
 <script>
-import {mapState, mapMutations, mapActions} from 'vuex'
+import {mapState, mapActions} from 'vuex'
 export default {
   name: 'Hot',
   computed: {
-    ...mapState(['movieList']),
-    ...mapMutations(['clearData'])
+    ...mapState(['movieList'])
   },
   methods: {
     ...mapActions(['getHot'])
-  },
-  created() {
-    this.clearData()
   },
   mounted () {
     this.getHot()

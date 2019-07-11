@@ -36,7 +36,12 @@ const store = new Vuex.Store({
     getMovie (context) {
       jsonp(baseURL + 'v2/movie/coming_soon', (err, res) => {
         if(err) return alert('获取数据失败')
-        console.log(11111)
+        context.commit('setData', res)
+      })
+    },
+    getTop (context) {
+      jsonp(baseURL + 'v2/movie/top250', (err, res) => {
+        if(err) return alert('获取数据失败')
         context.commit('setData', res)
       })
     }
