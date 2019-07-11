@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div v-if="detail">
       <img :src="'https://images.weserv.nl?url='+ detail.images.medium" alt="">
       <p>{{detail.summary}}</p>
     </div>
@@ -21,7 +21,6 @@ export default {
     this.clearData()
   },
   mounted () {
-    // console.log(this.$store.state.detail)
     this.getDetail(this.$route.params.id)
   }
 }
