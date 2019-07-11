@@ -12,16 +12,23 @@ const store = new Vuex.Store({
   state: {
     // 标题
     title: null,
-    movieList: null
+    movieList: null,
+    // 详情页数据
+    detail: null
   },
   mutations: {
     setData (state, payload) {
       state.title = payload.title
       state.movieList = payload.subjects
     },
-    clearData (state, payload) {
+    clearData (state) {
       state.title = null
       state.movieList = null
+      state.detail = null
+    },
+    setDetail (state, payload) {
+      state.title = payload.title,
+      state.detail = payload
     }
   },
   actions: {
@@ -44,7 +51,14 @@ const store = new Vuex.Store({
         if(err) return alert('获取数据失败')
         context.commit('setData', res)
       })
-    }
+    },
+    // 获取详情页数据
+    getDetail (context, id) {
+      jsonp(baseURL + 'v2/movie/subject/' + id, (err, res) => {
+        if(err) return alert('获取数据失败')
+        context.commit('setDetail', res)
+      })
+    },
   }
 })
 export default store

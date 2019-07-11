@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul v-if="movieList" class="list">
-      <li v-for="item in movieList" :key=item.id>
+      <li v-for="item in movieList" :key=item.id @click="toDetail(item.id)">
         <img :src="'https://images.weserv.nl?url='+ item.images.small" alt="">
         <div class="info">
           <p style="font-size: 12px;font-weight: bold;">{{item.title}}</p>
@@ -24,7 +24,10 @@ export default {
   },
   methods: {
     ...mapActions(['getTop']),
-    ...mapMutations(['clearData'])
+    ...mapMutations(['clearData']),
+    toDetail (id) {
+      this.$router.push(`/detail/${id}`)
+    }
   },
   created () {
     this.clearData()

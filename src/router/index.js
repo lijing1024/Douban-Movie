@@ -13,8 +13,9 @@ const router = new VueRouter({
     {path: '/hot', name: 'hot', component: Hot},
     {path: '/movie', name: 'movie', component: Movie},
     {path: '/top', name: 'top', component: Top},
-    {path: '/detail', name: 'detail', component: Detail}
-    
-  ]
+    {path: '/detail/:id', name: 'detail', component: Detail}
+  ],
+  // 通过路由的构造选项 linkActiveClass 来全局配置链接激活时使用的 CSS 类名
+  linkActiveClass: 'active'
 })
 export default router
