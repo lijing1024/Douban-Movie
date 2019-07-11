@@ -18,6 +18,10 @@ const store = new Vuex.Store({
     setData (state, payload) {
       state.title = payload.title
       state.movieList = payload.subjects
+    },
+    clearData (state, payload) {
+      state.title = null
+      state.movieList = null
     }
   },
   actions: {

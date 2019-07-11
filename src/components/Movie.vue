@@ -16,14 +16,19 @@
   </div>
 </template>
 <script>
-import {mapState, mapActions} from 'vuex'
+import {mapState, mapMutations, mapActions} from 'vuex'
 export default {
   name: 'Movie',
   computed: {
     ...mapState(['movieList'])
   },
   methods: {
-    ...mapActions(['getMovie'])
+    ...mapActions(['getMovie']),
+    ...mapMutations(['clearData'])
+  },
+  // Hot组件和Movie公用一个action,为避免数据闪烁问题,渲染数据前(created)先清空原数据
+  created () {
+    this.clearData()
   },
   mounted () {
     this.getMovie()
